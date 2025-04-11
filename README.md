@@ -1,6 +1,7 @@
 # ISTA421_Exam2
 
 Resource Link 1: https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2434813
+
 Resource Link 2: https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/774388
 
 Dataset Assessment: 
