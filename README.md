@@ -9,29 +9,30 @@ Dataset Assessment:
 
 
 Variable description: 
-Facility Name is a String that has the name of the medical center where the data was taken from.
 
-Facility ID is an int that is a unique identifier for each medical center.
+**Facility Name** is a String that has the name of the medical center where the data was taken from.
 
-State is a String that has the abbreviation for each state that the medical center is in. All 50 states are present.
+**Facility ID** is an int that is a unique identifier for each medical center.
 
-Measure Name is a String that provides information about the index to the quality and performance of a medical center in a certain procedure. 
+**State** is a String that has the abbreviation for each state that the medical center is in. All 50 states are present.
 
-Number of Discharges is a float that is the number of discharges that a medical center had in the given period of time.
+**Measure Name** is a String that provides information about the index to the quality and performance of a medical center in a certain procedure. 
 
-Footnote is a float that is the number of additional notes regarding a certain data entry.
+**Number of Discharges** is a float that is the number of discharges that a medical center had in the given period of time.
 
-Excess Readmission Ratio is a float that is the ratio of actual readmission rates to expected readmission rates.
+**Footnote** is a float that is the number of additional notes regarding a certain data entry.
 
-Predicted Readmission Rate is a float that is the predicted amount of patients to be readmitted.
+**Excess Readmission Ratio** is a float that is the ratio of actual readmission rates to expected readmission rates.
 
-Expected Readmission Rate is a float that is the expected amount of patients to be readmitted. 
+**Predicted Readmission Rate** is a float that is the predicted amount of patients to be readmitted.
 
-Number of Readmissions is a float that is the number of actual readmissions.
+**Expected Readmission Rate** is a float that is the expected amount of patients to be readmitted. 
 
-Start Date is a String that has the start date of the collection of the data.
+**Number of Readmissions** is a float that is the number of actual readmissions.
 
-End Date is a String that has the end date of the collection of the data.
+**Start Date** is a String that has the start date of the collection of the data.
+
+**End Date** is a String that has the end date of the collection of the data.
 
 
 Research Question:
