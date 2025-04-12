@@ -4,7 +4,14 @@ Resource Link 1: https://jamanetwork.com/journals/jamainternalmedicine/fullartic
 
 Resource Link 2: https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/774388
 
-Dataset Assessment: 
+Dataset Assessment: After assessing the data, it is clear to see that there are some problems in it. In the residual plot, there are some outliers and high leverage point seen, and the data creates a funnel shape. This funnel shape is also seen in the linear regression model that uses number of discharges as a predictor for number of readmissions. This shape is also present in a linear regression model that uses the excess readmission ratio as a predictor for the number of readmissions. The funnel shape that is seen indicates non-constant variance of the error terms. 
+
+# No multicollinearity is present
+# An additional Durbin Watson test alongside the residual and fitted value plot indicates no correlation of error terms
+# A few high leverage points are present. The most notable ones being at about -600, -420, 320
+# Non linearity 
+
+
 
 
 
