@@ -3,15 +3,28 @@ import numpy as np
 import matplotlib.pyplot as plt
 import statsmodels.api as sm
 from statsmodels.stats.outliers_influence import variance_inflation_factor
+from statsmodels.stats.stattools import durbin_watson
 
 
 # Number of Discharges are floats
 # Number of Readmissions were strings but I converted them to ints
 # Predicted Readmission Rate is a float
+# Facility Name is a string
+# Facility ID is an int
+# Measure name is a string
+# Footnote is a float
+# Excess Readmission Ratio is a float
+# Expected Readmission Rate is a float
+# Start Date is a string but I converted it to datetime
+# End Date is a string but I converted it to datetime
+
 
 # from the residual plot, it is clear that there are some outliers and that there is a funnel shape present.
 # The funnel shape indicates non-constant variance of error terms. 
 # No multicollinearity is present
+# An additional Durbin Watson test alongside the residual and fitted value plot indicates no correlation of error terms
+# A few high leverage points are present. The most notable ones being at about -600, -420, 320
+
 
 
 
@@ -25,10 +38,6 @@ health_df["Number of Readmissions"] = health_df["Number of Readmissions"].astype
 health_df["Start Date"] = pd.to_datetime(health_df["Start Date"])
 health_df["End Date"] = pd.to_datetime(health_df["End Date"])
 #print(health_df.head(10))
-
-
-for i in health_df["Predicted Readmission Rate"]:
-    print(type(i))
 
 
 # response variable is the number of readmissions
@@ -50,8 +59,6 @@ def linear_model(health_df):
     ax.set_ylabel("Number of Readmissions", fontsize=16, fontname="Lucida Sans Unicode")
     ax.set_title("Number of Readmissions vs. Number of Discharges", fontsize=20, fontname="Lucida Sans Unicode")
     fig.patch.set_facecolor("whitesmoke")
-    print(model.summary())
-
 
 
 def residual_plot(y_pred, model):
@@ -78,13 +85,22 @@ def check_collinearity(health_df):
     print(vif)
 
 
+def d_watson(health_df):
+    X = sm.add_constant(health_df[["Number of Discharges", "Expected Readmission Rate"]])
+    model = sm.OLS(health_df["Number of Readmissions"], X).fit()
+    print(durbin_watson(model.resid))
+
+
+
 
 
 
 def main():
-    #linear_model(health_df)
-    #residual_plot(health_df["Number of Readmissions"], health_df["Number of Discharges"])
-    check_collinearity(health_df)
+    linear_model(health_df)
+    residual_plot(health_df["Number of Readmissions"], health_df["Number of Discharges"])
+    #check_collinearity(health_df)
+    #d_watson(health_df)
+
     plt.show()
 
 
