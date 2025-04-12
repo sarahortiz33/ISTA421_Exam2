@@ -37,7 +37,8 @@ XTX_inv = np.linalg.inv(XTX)
 XTy = np.matmul(XT, y)
 
 betas = np.matmul(XTX_inv, XTy)
-print(betas)
+print("Betas:", betas)
+print()
 
 learning_rate = 0.00001 
 iterations = 1000
